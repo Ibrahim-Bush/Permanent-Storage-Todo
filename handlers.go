@@ -28,7 +28,7 @@ func create_todo_handler(c *gin.Context){
 	case err == nil:
 		c.JSON(200, *todo_ptr)
 	case errors.Is(err, ErrEmptyTitle):
-		c.JSON(400, gin.H{"error": ErrEmptyTitle})
+		c.JSON(400, gin.H{"error": "Title cannot be empty"})
 	default:
 		c.JSON(500, gin.H{"error": "Error with creating todo"})
 	}
@@ -61,7 +61,7 @@ func get_todo_handler(c *gin.Context){
 	case err == nil:
 		c.JSON(200, *todo_ptr)
 	case errors.Is(err, ErrNotFound):
-		c.JSON(404, gin.H{"error": ErrNotFound})
+		c.JSON(404, gin.H{"error": "Todo not found"})
 	default:
 		c.JSON(500, gin.H{"error": "Error in fetching item"})				
 	}
@@ -92,9 +92,9 @@ func update_todo_handler(c *gin.Context){
 	case err == nil:
 		c.JSON(200, *todo_ptr)
 	case errors.Is(err, ErrEmptyTitle):
-		c.JSON(400, gin.H{"error": ErrEmptyTitle})
+		c.JSON(400, gin.H{"error": "Title cannot be empty"})
 	case errors.Is(err, ErrNotFound):
-		c.JSON(404, gin.H{"error": ErrNotFound})
+		c.JSON(404, gin.H{"error": "Todo not found"})
 	default:
 		c.JSON(500, gin.H{"error": "Error with updating todo"})
 	}
