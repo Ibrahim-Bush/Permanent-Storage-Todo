@@ -25,7 +25,7 @@ type Todo struct {
 func get_db_connection() error {
 
 	//first get connection to the database.
-	conn_data := "host=localhost user=postgres password=2006 dbname=todo_app port=5432 sslmode=disable"
+	conn_data := "host=localhost user=postgres password=admin dbname=todo_app port=5432 sslmode=disable"
 	db, err := gorm.Open(postgres.Open(conn_data), &gorm.Config{})
 	//check if something went wrong.
 	if err != nil{
