@@ -138,7 +138,7 @@ func (handler *Todo_handler) Delete_all_todos_handler(c *gin.Context) {
 	}
 }
 
-func (handler *Todo_handler) Get_todo_by_id(c *gin.Context) {
+func (handler *Todo_handler) Get_todo_by_id_handler(c *gin.Context) {
 	//get id parameter.
 	id := c.Param("id")
 	//get the todo of that id.
@@ -170,7 +170,7 @@ func (handler *Todo_handler) Get_todos_by_category_handler(c *gin.Context) {
 	}
 }
 
-func (handler *Todo_handler) Get_todos_by_status(c *gin.Context) {
+func (handler *Todo_handler) Get_todos_by_status_handler(c *gin.Context) {
 	//get status param.
 	status := c.Param("status")
 	//get todos of that status.
