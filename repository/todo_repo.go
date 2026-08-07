@@ -76,8 +76,7 @@ func (repo *postgres_repo) Delete_record_by_id(id int) error{
 
 func (repo *postgres_repo) Delete_all_records() error{
 	//delete all records in the database.
-	result := repo.db.Delete(&model.Todo{})
-	//result := repo.db.Exec("DELETE FROM todos")
+	result := repo.db.Exec("DELETE FROM todos")
 	return result.Error
 }
 
