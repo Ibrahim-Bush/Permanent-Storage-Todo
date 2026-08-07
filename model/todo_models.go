@@ -7,9 +7,9 @@ type Todo struct {
 	Title       string	   `json:"title" gorm:"type:varchar(255);not null"`
 	Completed   bool  	   `json:"completed" gorm:"default:false;not null"`
 	Category    string	   `json:"category" gorm:"type:varchar(50);not null"`
-	Priority    string 	   `json:"priority" gorm:"type:varchar(10);not null"`
-	CompletedAt *time.Time `json:"completedAt" gorm:"type:datetime;default:null"`
-	DueDate		*time.Time `json:"dueDate" gorm:"type:datetime;default:null"`
+	Priority    string 	   `json:"priority" gorm:"tye:varchar(10);not null"`
+	CompletedAt *time.Time `json:"completedAt" grm:"default:null"`
+	DueDate		*time.Time `json:"dueDate" gorm:"default:null"`
 }
 
 type Create_todo_request struct{
